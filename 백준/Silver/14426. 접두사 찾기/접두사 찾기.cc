@@ -10,18 +10,18 @@ string S[10000];
 string C[10000]; // check해야 하는 문자열
 
 int result = 0;
-void check(string s, string c)
-{
-    result = 0;
-    for (int i = 0; i < static_cast<int>(c.length()); i++)
-    {
-        if (s[i] != c[i])
-        {
-            result = 1; // 다른게 발견되면 1임.
-            break;
-        }
-    }
-}
+// void check(string s, string c)
+// {
+//     result = 0;
+//     for (int i = 0; i < static_cast<int>(c.length()); i++)
+//     {
+//         if (s[i] != c[i])
+//         {
+//             result = 1; // 다른게 발견되면 1임.
+//             break;
+//         }
+//     }
+// }
 bool comp(string s1, string s2)
 {
     return s1 < s2; // string 사전 역순
@@ -85,7 +85,9 @@ int main()
 
                 if (check)
                 {
-                    cnt = cnt+1;
+                    // cnt = cnt+1;
+                    cnt++;
+                    
                     // cout << "-> " << C[j] << " " << endl;
                     visit[j] = 1;
                 }
