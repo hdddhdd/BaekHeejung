@@ -10,10 +10,8 @@ int main()
     string ans = "";
 
     cin >> s;
-    // 연결리스트에 원소 할당
     list<char> li(s.begin(), s.end());
 
-    // 커서위치를 입력된 문자 제일 끝에 위치
     auto cursor = li.end();
     cin >> M;
 
@@ -34,20 +32,19 @@ int main()
         }
         else if (cmd == 'B')
         {
-            if (cursor != li.begin()) // 맨 왼쪽이 아니라면
+            if (cursor != li.begin()) 
             {
                 cursor--;
-                cursor = li.erase(cursor); // 삭제
+                cursor = li.erase(cursor); 
             }
         }
         else if (cmd == 'P')
         {
             cin >> c;
-            li.insert(cursor, c); // 문자 c 삽입
+            li.insert(cursor, c); 
         }
     }
 
-    // 연결리스트 출력
     for (cursor = li.begin(); cursor != li.end(); cursor++)
         cout << *cursor;
 }
